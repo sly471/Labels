@@ -38,9 +38,9 @@
  * @copyright 2003 Laurent PASSEBECQ
 **/
 
-require_once('code128.php');
+require_once('ean13.php');
 
-class PDF_Label extends PDF_Code128 {
+class PDF_Label extends PDF_EAN13 {
 
 	// Private properties
 	protected $_Margin_Left;		// Left margin of labels
