@@ -4,17 +4,6 @@ ini_set('display_startup_errors',1);
 ini_set('display_errors',1);
 error_reporting(-1);
 require('PDF_Label.php');
-/*------------------------------------------------
-To create the object, 2 possibilities:
-either pass a custom format via an array
-or use a built-in AVERY name
-------------------------------------------------*/
-
-
-// Standard format
-// $pdf = new PDF_Label('L7163');
-//                               Dimensions    w   h                                                     columns   rows 
-// $pdf = new PDF_Label(array('paper-size'=>array(99, 95), 'metric'=>'mm', 'marginLeft'=>1, 'marginTop'=>1, 'NX'=>2, 'NY'=>4, 'SpaceX'=>3, 'SpaceY'=>3, 'width'=>44, 'height'=>21, 'font-size'=>6));
 
 $Barcode = $_POST["code"];
 $Color = $_POST["color"];
@@ -34,7 +23,7 @@ $LabelLeft = $Order;
 for($i=0;$i<$Order/4;$i++) {
     for($j=1;$j<=4 || ($LabelLeft==0);$j++){    
         $pdf->SetFontSize(8);
-        $text = sprintf("%s\n%s\n%s, %s", "Valija Gitana" ,$Name, $Color, $Price);
+        $text = sprintf("%s\n%s\n%s %s", "Valija Gitana" ,$Name, $Color, $Price);
         //$code='12345678901234567890';
         $pdf->Add_Label($text);
         $pdf->SetFontSize(4);

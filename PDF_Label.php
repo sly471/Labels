@@ -142,7 +142,7 @@ class PDF_Label extends PDF_EAN13 {
 			if ($this->_COUNTY == $this->_Y_Number) {
 				// End of page reached, we start a new one
 				$this->_COUNTY=0;
-				$this->AddPage();
+				//$this->AddPage();
 			}
 		}
 
